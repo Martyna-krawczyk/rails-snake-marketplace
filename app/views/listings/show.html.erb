@@ -44,6 +44,12 @@
 <strong>Breed:</strong>
 <%= @listing.breed.name %>
 </p>
+<p>
+<strong>Trait(s):</strong>
+<% @listing.traits.each do |trait| %>
+<%= trait.name %>
+<% end %>
+</p>
 
 <%= link_to 'Edit', edit_listing_path( @listing ) %>
 <%= link_to 'Back', listings_path %>
