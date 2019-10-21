@@ -1,0 +1,14 @@
+<h1>Show Breed</h1>
+
+<p>
+<strong>Name:</strong>
+<%= @breed.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_breed_path( @breed ) %>
+<%= link_to 'Back', breeds_path %>
+<%= link_to 'Listings', listings_path %>
+<%= link_to 'Add New Listing', new_listing_path %>
+<%= link_to 'Add New Breed', new_breed_path %>
+<%= link_to 'Home', root_path %>

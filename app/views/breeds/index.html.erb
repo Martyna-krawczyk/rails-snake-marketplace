@@ -1,0 +1,28 @@
+<h1>Breeds</h1>
+
+<table>
+  <thead>
+    <tr>
+    <th>Breed_id</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @breeds.each do |breed| %>
+      <tr>
+        <td><%= breed.id %></td>
+        <td><%= breed.name %></td>
+        <td><%= link_to 'Show', breed_path(breed) %></td>
+        <td><%= link_to 'Edit', edit_breed_path(breed) %></td>
+        <td><%= link_to 'Destroy', breed_path( breed ), method: :delete, data: { confirm: 'Are you sure you want to delete this, Punk?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+ <%= link_to("New Breed", new_breed_path) %>
+ <%= link_to 'Listings', listings_path %>
+<%= link_to 'Add New Listing', new_listing_path %>
+<%= link_to 'Breeds', breeds_path %>
+<%= link_to 'Home', root_path %>
