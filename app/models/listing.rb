@@ -3,6 +3,7 @@ class Listing < ApplicationRecord
   belongs_to :breed
   has_many :listings_traits
   has_many :traits, through: :listings_traits
+  belongs_to :user
 
   enum sex: { female: 0, male: 1 }
 

@@ -32,8 +32,8 @@
         <td><%= listing.date_of_birth %></td>
         <td><%= listing.diet %></td>
         <td><%= link_to 'Show', listing_path( listing ) %></td>
-        <td><%= link_to 'Edit', edit_listing_path( listing ) %></td>
-        <td><%= link_to 'Destroy', listing_path( listing ), method: :delete, data: { confirm: 'Are you sure you want to delete this, Punk?' } %></td>
+        <td><%= link_to 'Edit', edit_listing_path( listing ) if current_user.id == listing.user_id %></td>
+        <td><%= link_to 'Destroy', listing_path( listing ), method: :delete, data: { confirm: 'Are you sure you want to delete this, Punk?' } if current_user.id == listing.user_id %></td>
       </tr>
     <% end %>
   </tbody>
