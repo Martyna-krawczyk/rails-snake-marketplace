@@ -42,6 +42,7 @@ class ListingsController < ApplicationController
     listing_params = params.require(:listing).permit(:title, :description, :breed_id, :sex, :price, :deposit, :city, :state, :date_of_birth, :diet, :picture)
     
     @listing = current_user.listings.create(listing_params)
+    @listing.traits << Trait.find(params[:listing][:trait_id])
     @listing.save
 
     if @listing.save

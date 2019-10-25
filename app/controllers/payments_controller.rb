@@ -1,6 +1,8 @@
 class PaymentsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [ :webhook ]
   def success
+    @listing = Listing.find(params[:listingId])
+    @user = User.find(params[:userId])
   end
 
   def webhook
@@ -15,4 +17,5 @@ class PaymentsController < ApplicationController
     status 200
     
   end
+  
 end
